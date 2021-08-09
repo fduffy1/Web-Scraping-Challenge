@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap Link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- !-- CSS Link --> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1>Missions to Mars</h1>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Latest Mars News</h2>
+            <h4> {{ mars.news_title }}</h4>
+            <p> {{mars.news_p}} </p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Featured Mars Image</h3>
+            <img src="{{ mars.featured}}">
+        </div>
+
+        <div class = "col-md-4">
+            <h3>Mars Facts</h3>
+            <table class="table table-borderless">
+                <table>{{mars.marsfacts|safe}}</table>
+            </table> 
+        </div>
+    </div>  
+</div>
+
+<div class = "container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="caption"style="font-weight: bold;">
+                <h3>Hemispheres</h3>
+                <img class="img-responsive" src = "{{mars.hemispheres[0]}}" class = "img img-thumbnail" alt="hemisphere" style="width:50%;">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="caption"style="font-weight: bold;">
+                <h3>Hemispheres</h3>
+                <img class="img-responsive" src = "{{mars.hemispheres[1]}}" class = "img img-thumbnail" alt="hemisphere" style="width:50%;">  
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class = "container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="caption"style="font-weight: bold;">
+                <h3>Hemispheres</h3>
+                <img class="img-responsive" src = "{{mars.hemispheres[2]}}" class = "img img-thumbnail" alt="hemisphere" style="width:50%;">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="caption"style="font-weight: bold;">
+                <h3>Hemispheres</h3>
+                <img class="img-responsive" src = "{{mars.hemispheres[3]}}" class = "img img-thumbnail" alt="hemisphere" style="width:50%;">  
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
